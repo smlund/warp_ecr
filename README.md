@@ -40,7 +40,9 @@ me if you want to contribute and I will add you)
   ... edit files etc then checkin (use README.md as example here) using: 
   % git add README.md 
   % git commit -m "SML: updated README.md file" 
-  % git push 
+  % git push
+
+You may be prompted for user name and password info in this step.  
 
 To remove a file "file" from git control (to not include in future pulls), use 
 
