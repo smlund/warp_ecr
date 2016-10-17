@@ -1,0 +1,23 @@
+#!/bin/bash
+# Script to copy lattice element field description files from Dropbox archive to the simulation directory. This shell executable script should be extended and run as necessary when field element data changes and/or simulations are being carried out on a new platform. Execute with:
+#
+# % ./frib-lat-fields-dropbox-fetch
+#
+# See information in Dropbox for the field element descriptions and data sets.   
+
+# Make various lattice element directories if not present to store field element data
+mkdir -p lat_susi lat_sol # [Alfonse ... please add as needed] 
+
+# Fetch lattice field files from Dropbox repo in the relevant directories. Note that -nc for no clobber option is being used. I don't understand why, but the dropbox time stamp of the file is not transmitted correctly (always present system time).  nc appears to be wrt name.  So if the same file name (date in name) is retransmitted, this may cause a problem. Unsure how to fix this. But -nc makes fast if file is there (gets skipped).  
+
+# -- susi
+cd lat_susi 
+# wget -nc https://www.dropbox.com/s/824irj3jwvm94fb/lat_d5.3d.20140527.pkl  # [Alfonse: update when we add]
+cd ..
+
+# -- solenoid 
+cd lat_sol 
+#wget -nc https://www.dropbox.com/s/fj4zjqsa2v6gsca/lat_s4.at.20141031.pkl  # [Alfonse: update when we add]
+cd ..
+
+# Continue same pattern for all files.  
