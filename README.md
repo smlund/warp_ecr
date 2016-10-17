@@ -14,7 +14,7 @@ Daniel Winklehner
 [Alfonse put info]
 
 Derek Neben, Chun Yan (Jonathan) Wong, Daniela Leitner 
-[Alfonse put info] 
+[Alfonse put info ... here is an edit] 
 
 Steven M. Lund
 Physics and Astronomy Department
