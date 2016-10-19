@@ -26,8 +26,10 @@ lund@frib.msu.edu
 517-908-7291
 
 To initialize the repository, 
-
+ https form 
    % git clone https://github.com/smlund/warp_ecr
+ ssh form (can have permission problems depending on setup)
+   % git clone git@github.com:smlund/warp_ecr.git
 
 This will create a directory, ./warp_ecr where command was 
 run with the archive files.   
