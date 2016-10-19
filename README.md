@@ -27,7 +27,7 @@ lund@frib.msu.edu
 
 To initialize the repository, 
  https form 
-   % git clone https://github.com/smlund/warp_ecr
+   % git clone https://github.com/smlund/warp_ecr.git
  ssh form (can have permission problems depending on setup)
    % git clone git@github.com:smlund/warp_ecr.git
 
