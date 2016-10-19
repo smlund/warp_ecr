@@ -24,14 +24,6 @@ from numpy.random import random
 from struct import unpack
 # -----------------------------------------------------------------------------#
 
-# --- Physical constants, in one place so they stay consistent --- #
-pi = 3.14159265358979323 # Pi
-amu = 1.66053873e-27 # Atomic Mass Unit (kg)
-clight = 2.99792458e+8 # Speed of light in vacuum (m/s)
-echarge = 1.602176462e-19 # Proton charge (C)
-emass = 9.10938188e-31 # Electron mass (kg)
-largepos = 1.0e36 # Very large number
-
 # ----- Quick Tools ----- #
 def mkdir_p(path):
     try:

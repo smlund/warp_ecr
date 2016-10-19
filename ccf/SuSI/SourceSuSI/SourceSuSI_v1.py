@@ -52,8 +52,8 @@ import os
 offset = 0.0
 
 # --- DW's imports and helper functions--- #
-execfile('../../lib/Functions-v3.3.py')
-execfile('../../lib/physConst.py')
+execfile('../lib/Functions-v3.3.py')
+execfile('../lib/physConst.py')
 
 
 # --- Set comment lines 2 (main) and 1 (aux) and user's name --- #
@@ -72,9 +72,10 @@ if warpoptions.options.neutr is not None:
 	neut=warpoptions.options.neutr
 if warpoptions.options.genPath is not None:
 	fname=warpoptions.options.genPath
+	print ("Input Distribution file path = "+fname)
 else:
 	fname = ("../RequiredFiles/initDistBiasDisc/16Oxygen_3eV_np100000.dist")
-	print ("fname = "+fname)
+	print ("Input Distribution file path = "+fname)
 
 # --- Change neutralization percentage into a multiplicative factor --- #
 neut=(100-float(neut))/100
@@ -105,7 +106,6 @@ if not os.path.isdir(SavePath): mkdir_p(SavePath)
 # Note: the function setnspecies also reallocates all the necessary arrays
 # So there is no need to call gchange("InPart")...
 setnspecies(8)
-npSet=100000
 
 # --- Set general flags --- #
 top.lrelativ = False                # Relativistic treatment of particles on/off
@@ -155,8 +155,7 @@ if	(DISTRIBUTION["x"].size == DISTRIBUTION["y"].size) and\
 	(DISTRIBUTION["y"].size == DISTRIBUTION["z"].size) and\
 	(DISTRIBUTION["z"].size == DISTRIBUTION["vx"].size) and\
 	(DISTRIBUTION["vx"].size == DISTRIBUTION["vy"].size) and\
-	(DISTRIBUTION["vy"].size == DISTRIBUTION["vz"].size) and\
-	(DISTRIBUTION["vz"].size == top.ns * npSet):
+	(DISTRIBUTION["vy"].size == DISTRIBUTION["vz"].size):
 		pass
 
 else:

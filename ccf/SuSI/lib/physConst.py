@@ -8,3 +8,6 @@ emassKg = 9.10938356e-31    # Electron mass [kg]
 clight = 299792458.0        # Speed of light in vacuum [m/s]
 kBoltzmannJ = 1.38064852e-23    # Boltzmann's Constant [m^2 kg s^-2 K^-1]
 kBoltzmannMeV = 8.6173324e-11   # Boltzmann's Constant [MeV K^-1]
+
+pi = 3.14159265358979323 # Pi
+largepos = 1.0e36 # Very large number
