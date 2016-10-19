@@ -8,7 +8,9 @@ Damon Todd and Daniela Leitner (working at LBNL) which were extended by Daniel W
 Contact Info for Present Collaborators:
 
 Alfonse Pham 
-[Alfonse put info as you wish to be listed going forward]
+Michgan State University 
+National Superconducting Cyclotron Laboratory
+pham@nscl.msu.edu
 
 Daniel Winklehner 
 [Alfonse put info]
