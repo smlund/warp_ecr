@@ -25,12 +25,18 @@ warpoptions.parser.add_argument("-a",
 									"require user response for diagnostic purposes.",
 								default=False)
 
-warpoptions.parser.add_argument("-g",
-								"--generate",
+warpoptions.parser.add_argument("-i",
+								"--initpath",
 								type=str,
-								dest="genPath",
+								dest="initPath",
 								help="Path to existing initial particle\n"
 									"distribution file.")
+
+warpoptions.parser.add_argument("-b",
+								"--bmappath",
+								type=str,
+								dest="bmapPath",
+								help="Path to 3D B-field map file.")
 
 # --- import the necessary scripts to run the simulation properly --- #
 # --- WARP imports --- #
@@ -68,14 +74,23 @@ neut 			= 100		# Beam neutralization (in percent, 100 percent neutralization = v
 # --- Now override the default values with command line options --- #
 if warpoptions.options.AutoRun is not None:
 	autorun=warpoptions.options.AutoRun
+	
 if warpoptions.options.neutr is not None:
 	neut=warpoptions.options.neutr
-if warpoptions.options.genPath is not None:
-	fname=warpoptions.options.genPath
+
+if warpoptions.options.initPath is not None:
+	fname=warpoptions.options.initPath
 	print ("Input Distribution file path = "+fname)
 else:
-	fname = ("../RequiredFiles/initDistBiasDisc/16Oxygen_3eV_np100000.dist")
+	fname = ("../RequiredFiles/initDistBiasDisc/16Oxygen_3eV_np10000.dist")
 	print ("Input Distribution file path = "+fname)
+
+if warpoptions.options.bmapPath is not None:
+	fname=warpoptions.options.bmapPath
+	print ("3D B-field map file path = "+fname)
+else:
+	B_Path=("../RequiredFiles/SuSI3DFieldMaps/SuSI_B_3D_BminBecr0.73_step1mm.dat")
+	print ("3D B-field map file path = "+fname)
 
 # --- Change neutralization percentage into a multiplicative factor --- #
 neut=(100-float(neut))/100
@@ -233,7 +248,7 @@ if autorun == False:
 # --- Mesh and fieldsolver --- #
 
 #rPipe = 0.04
-rPipe = 0.05	#ANP: found to be larger in drawings
+rPipe = 0.05	#Found to be larger in drawings
 
 # --- radius of beampipe (particle absorbing wall) --- #
 top.prwall		= rPipe
@@ -275,7 +290,7 @@ if autorun == False:
 # ---------------------------------------------------------------------------- #
 # ---------------------------------------------------------------------------- #
 # --- Lattice elements --- #
-B_Path=("../RequiredFiles/SuSI3DFieldMaps/SuSI_B_3D_BminBecr0.50_step1mm.dat")
+#B_Path=("../RequiredFiles/SuSI3DFieldMaps/SuSI_B_3D_BminBecr0.50_step1mm.dat")
 #B_Path=("../RequiredFiles/SuSI3DFieldMaps/SuSI_B_3D_BminBecr0.73_step1mm.dat")
 #B_Path=("../RequiredFiles/SuSI3DFieldMaps/SuSI_B_3D_BminBecr0.80_step1mm.dat")
 
