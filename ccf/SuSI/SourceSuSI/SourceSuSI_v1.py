@@ -120,7 +120,7 @@ if not os.path.isdir(SavePath): mkdir_p(SavePath)
 # --- Set number of species --- #
 # Note: the function setnspecies also reallocates all the necessary arrays
 # So there is no need to call gchange("InPart")...
-setnspecies(8)
+setnspecies(8) # For 16-Oxygen
 
 # --- Set general flags --- #
 top.lrelativ = False                # Relativistic treatment of particles on/off
@@ -400,7 +400,7 @@ while z < 0.495:
 		XY_save_particles(filename = filename+"_09.dat"	)
 
 	if nstep == ZTargetStep:
-		XY_save_particles(filename = filename+"_10.dat")
+		XY_save_particles(filename = filename+"_10.end")
 		XY_save_envelope(Envelopes, filename = filename+".env"	)
 
 	# advance 1 step

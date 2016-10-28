@@ -7,11 +7,12 @@
 #
 # Note: getReqFilesSource.sh must be in folder ./SourceSuSI for it
 # to work properly. In the future we can write a more intelligent
-# script place the fetched files into the proper folders regardless
+# script to place the fetched files into the proper folders regardless
 # of script location.
 #
 
 # Make 'RequiredFiles' directory if not already present
+mkdir -p ../RequiredFiles/initDistBiasDisc
 mkdir -p ../RequiredFiles/SuSI3DFieldMaps
 cd ../RequiredFiles
 
